@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Чат: Насколько толстый Егор?</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .fat-level {
+            animation: pulse 2s infinite;
+        }
+        .chat-bubble {
+            border-radius: 20px;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+        .user-message {
+            background-color: #3b82f6;
+            color: white;
+            border-bottom-right-radius: 5px;
+        }
+        .bot-message {
+            background-color: #e5e7eb;
+            color: #1f2937;
+            border-bottom-left-radius: 5px;
+        }
+        .burger-icon {
+            color: #f59e0b;
+        }
+        .game-icon {
+            color: #8b5cf6;
+        }
+        .boxing-icon {
+            color: #ef4444;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-purple-600 to-blue-500 text-white p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold flex items-center">
+                <i class="fas fa-weight mr-2"></i> Чат: Насколько толстый Егор?
+            </h1>
+            <div class="flex space-x-2">
+                <span class="px-3 py-1 bg-yellow-500 rounded-full text-sm font-semibold flex items-center">
+                    <i class="fas fa-hamburger mr-1"></i> Бургеры
+                </span>
+                <span class="px-3 py-1 bg-green-500 rounded-full text-sm font-semibold flex items-center">
+                    <i class="fas fa-futbol mr-1"></i> Футбол
+                </span>
+                <span class="px-3 py-1 bg-red-500 rounded-full text-sm font-semibold flex items-center">
+                    <i class="fas fa-gamepad mr-1"></i> Valorant
+                </span>
+                <span class="px-3 py-1 bg-indigo-500 rounded-full text-sm font-semibold flex items-center">
+                    <i class="fas fa-headset mr-1"></i> Fortnite
+                </span>
+                <span class="px-3 py-1 bg-gray-800 rounded-full text-sm font-semibold flex items-center">
+                    <i class="fas fa-boxing-glove mr-1"></i> Бокс
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Chat Container -->
+    <div class="flex-1 container mx-auto p-4 overflow-y-auto" id="chat-container">
+        <div class="space-y-4">
+            <!-- Welcome Message -->
+            <div class="flex justify-start">
+                <div class="chat-bubble bot-message p-4 shadow-md">
+                    <div class="flex items-center mb-2">
+                        <div class="w-10 h-10 rounded-full bg-yellow-500 flex items-center justify-center mr-2">
+                            <i class="fas fa-robot text-white"></i>
+                        </div>
+                        <span class="font-bold">Бот-Толстомер</span>
+                    </div>
+                    <p>Привет! Ты здесь, чтобы обсудить, насколько наш друг Егор толстый? Давай оценим его любовь к бургерам, футболу, Valorant, Fortnite и боксу!  🍔⚽🎮🥊</p>
+                </div>
+            </div>
+
+            <!-- Fat Meter -->
+            <div class="flex justify-center my-6">
+                <div class="bg-white p-6 rounded-xl shadow-lg w-full max-w-md text-center">
+                    <h3 class="text-xl font-bold mb-4">Уровень жирности Егора:</h3>
+                    <div class="relative pt-1">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-semibold">Худой</span>
+                            <span class="text-xs font-semibold">ОЧЕНЬ ЖИРНЫЙ</span>
+                        </div>
+                        <div class="overflow-hidden h-4 mb-4 text-xs flex rounded bg-gray-200">
+                            <div style="width: 87%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-gradient-to-r from-yellow-400 to-red-600 fat-level"></div>
+                        </div>
+                        <div class="text-3xl font-bold text-red-600">87%</div>
+                        <p class="mt-2 text-sm text-gray-600">Егор в зоне опасности! Срочно меньше бургеров, больше бокса!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Burger Stats -->
+            <div class="flex justify-start">
+                <div class="chat-bubble bot-message p-4 shadow-md">
+                    <div class="flex items-center mb-2">
+                        <i class="fas fa-hamburger burger-icon text-2xl mr-2"></i>
+                        <span class="font-bold">Статистика по бургерам</span>
+                    </div>
+                    <p>Егор съедает примерно <span class="font-bold text-yellow-600">5 бургеров в неделю</span>. Если бы он играл в футбол столько же, сколько ест бургеров, он бы уже был в сборной!  ⚽🍔</p>
+                </div>
+            </div>
+
+            <!-- Game Stats -->
+            <div class="flex justify-end">
+                <div class="chat-bubble user-message p-4 shadow-md">
+                    <div class="flex items-center mb-2">
+                        <i class="fas fa-gamepad game-icon text-2xl mr-2"></i>
+                        <span class="font-bold">Игровая статистика</span>
+                    </div>
+                    <p>В Valorant он Silver 2, в Fortnite — 3 победы за сезон. Но его настоящий рейтинг — <span class="font-bold text-purple-600">"Мастер поедания бургеров между раундами"</span>!  🎮🍟</p>
+                </div>
+            </div>
+
+            <!-- Boxing Warning -->
+            <div class="flex justify-start">
+                <div class="chat-bubble bot-message p-4 shadow-md">
+                    <div class="flex items-center mb-2">
+                        <i class="fas fa-boxing-glove boxing-icon text-2xl mr-2"></i>
+                        <span class="font-bold">Боксёрские предупреждения</span>
+                    </div>
+                    <p>Егор утверждает, что занимается боксом, но его любимый удар — <span class="font-bold text-red-600">"двойной чизбургер в живот"</span>. Возможно, пора сменить тактику! 🤣</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Input Area -->
+    <div class="bg-white border-t border-gray-200 p-4">
+        <div class="container mx-auto flex">
+            <input type="text" placeholder="Напиши что-нибудь о Егоре..." class="flex-1 border border-gray-300 rounded-l-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-r-lg transition duration-200 flex items-center">
+                <i class="fas fa-paper-plane mr-2"></i> Отправить
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white p-4 text-center text-sm">
+        <p>© 2023 Чат "Насколько толстый Егор?" | С любовью к бургерам и Valorant</p>
+    </footer>
+
+    <script>
+        // Simple chat interaction
+        document.querySelector('button').addEventListener('click', function() {
+            const input = document.querySelector('input');
+            if (input.value.trim() !== '') {
+                addUserMessage(input.value);
+                setTimeout(() => {
+                    addBotResponse(input.value);
+                }, 1000);
+                input.value = '';
+            }
+        });
+
+        function addUserMessage(message) {
+            const chatContainer = document.getElementById('chat-container');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'flex justify-end';
+            messageDiv.innerHTML = `
+                <div class="chat-bubble user-message p-4 shadow-md">
+                    <p>${message}</p>
+                </div>
+            `;
+            chatContainer.appendChild(messageDiv);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+
+        function addBotResponse(userMessage) {
+            const responses = [
+                "Егор сейчас ест бургер, поэтому не может ответить! ",
+                "Если бы Егор бегал так же много, как ест бургеров, он бы уже пробежал марафон!  🏃‍♂️",
+                "Егор в данный момент проигрывает в Valorant и заедает горе чизбургером.  🎮🍔",
+                "Егор утверждает, что он не толстый, а 'сильный, как боксёр'. Ну-ну... ",
+                "Егор только что установил новый рекорд: 4 бургера за один матч Fortnite! 🍔"
+            ];
+            
+            const chatContainer = document.getElementById('chat-container');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'flex justify-start';
+            messageDiv.innerHTML = `
+                <div class="chat-bubble bot-message p-4 shadow-md">
+                    <div class="flex items-center mb-2">
+                        <div class="w-10 h-10 rounded-full bg-yellow-500 flex items-center justify-center mr-2">
+                            <i class="fas fa-robot text-white"></i>
+                        </div>
+                        <span class="font-bold">Бот-Толстомер</span>
+                    </div>
+                    <p>${responses[Math.floor(Math.random() * responses.length)]}</p>
+                </div>
+            `;
+            chatContainer.appendChild(messageDiv);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+    </script>
+</body>
+</html>
